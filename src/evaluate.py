@@ -12,5 +12,9 @@ class Evaluation():
         self.metric = "MSE"
     
     def eval(self, Ypred, Ygroundtruth):
+        '''
+        :param np.array Ypred: numpy array of value predicted from model
+        :param np.array Ygroundtruth: numpy array of value rainfall in dataset 
+        '''
         MSE = mean_squared_error(Ygroundtruth, Ypred)
         return MSE

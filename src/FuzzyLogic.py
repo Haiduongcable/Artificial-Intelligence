@@ -37,13 +37,6 @@ class FIS:
         rainfall['medium'] = fz.trapmf(rainfall.universe, [10, 15, 35, 40])     
         rainfall['high'] = fz.trapmf(rainfall.universe, [35, 45, 120, 120])     # mưa nhiều
 
-        # evoparation.view()
-        # humidity.view()
-        # pressure.view()
-        # cloud.view()
-        # temp.view()
-        # rainfall.view()
-
 
         rules = [
             ctrl.Rule(evoparation['low'] & temp['low'] & humidity['low'] & pressure['high'] & cloud['low'] , rainfall['very_low']),     # tại bốc hơi thấp
@@ -135,6 +128,15 @@ class FIS:
         self.Defz = ctrl.ControlSystemSimulation( CT )
 
     def predict(self, evoparation, humidity, pressure, cloud, temp):
+        '''
+        :param np.array evoparation: value evoparation
+        :param np.array humidity: value humidity
+        :param np.array pressure: value pressure
+        :param np.array cloud: value cloud
+        :param np.array temp: value temp
+        :return int: predict value
+        '''
+        
         self.Defz.input['evoparation'] = evoparation
         self.Defz.input['humidity'] = humidity
         self.Defz.input['pressure'] = pressure
@@ -142,3 +144,4 @@ class FIS:
         self.Defz.input['temp'] = temp
         self.Defz.compute()
         return self.Defz.output['rainfall']
+    

@@ -1,2 +1,2 @@
-path_data = ''
-learning_rate = ''
+path_save_data: '/home/duongnh/Documents/Artificial-Intelligence/data/AUSweather.csv'
+path_url_drive: '1OMkQp74n2aZ6QMZlLBWhEefQXJkNM4X3'

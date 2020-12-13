@@ -7,11 +7,16 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn import preprocessing
 from utils import convert_Date, convert_wind_direction
+import gdown
+import yaml
 
+with open("config.yaml", "r") as f:
+    config = yaml.load(f)
 
 class LoadData():
     def __init__(self):
-        self.path_data = ''
+        self.path_data = config['path_save_data']
+    
     
     def load(self):
         dataset = dataset= pandas.read_csv(self.path_data)
