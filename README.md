@@ -2,10 +2,10 @@
 Rainfall prediction using fuzzy logic 
 
 ## Environment
-Ubuntu 20.04
-Conda version : 4.8.3
-Conda-build version : 3.18.11
-Python version: 3.8.5
+Ubuntu 20.04\
+Conda version : 4.8.3\
+Conda-build version : 3.18.11\
+Python version: 3.8.5\
 
 ## Install package
 ```bash
